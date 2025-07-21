@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: API de Cifra de César
-  description: "API para cifrar e decifrar mensagens usando a Cifra de César. O alfabeto utilizado eh: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, w, y, z."
+  description: "API para cifrar e decifrar mensagens usando a Cifra de César. O alfabeto utilizado é: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, w, y, z."
   version: 1.0.0
 
 paths:
