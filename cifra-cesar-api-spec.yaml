@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  title: API de Cifra de César
+  description: "API para cifrar e decifrar mensagens usando a Cifra de César. O alfabeto utilizado eh: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, w, y, z."
+  version: 1.0.0
+
+paths:
+  /cifrar:
+    post:
+      summary: "Cifra uma mensagem usando a Cifra de César"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CifrarRequest'
+      responses:
+        '200':
+          description: "Mensagem cifrada com sucesso"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CifrarResponse'
+        '400':
+          description: "Requisição inválida"
+
+  /decifrar:
+    post:
+      summary: "Decifra uma mensagem cifrada usando a Cifra de César"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecifrarRequest'
+      responses:
+        '200':
+          description: "Mensagem decifrada com sucesso"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecifrarResponse'
+        '400':
+          description: "Requisição inválida"
+          
+  /decifrarSemInfoDeslocamento:
+    post:
+      summary: "Decifra uma mensagem cifrada que não possui a informação de deslocamento, usando a Cifra de César."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecifrarSemInfoDeslocamentoRequest'
+      responses:
+        '200':
+          description: "Mensagem decifrada com sucesso"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecifrarSemInfoDeslocamentoResponse'
+        '400':
+          description: "Requisição inválida"
+
+components:
+  schemas:
+    CifrarRequest:
+      type: object
+      required:
+        - textoClaro
+        - deslocamento
+      properties:
+        textoClaro:
+          type: string
+          maxLength: 255
+          example: "HELLO WORLD"
+        deslocamento:
+          type: integer
+          example: 3
+
+    CifrarResponse:
+      type: object
+      properties:
+        textoCifrado:
+          type: string
+          maxLength: 255
+          example: "KHOOR ZRUOG"
+
+    DecifrarRequest:
+      type: object
+      required:
+        - textoCifrado
+        - deslocamento
+      properties:
+        textoCifrado:
+          type: string
+          maxLength: 255
+          example: "KHOOR ZRUOG"
+        deslocamento:
+          type: integer
+          example: 3
+
+    DecifrarResponse:
+      type: object
+      properties:
+        textoClaro:
+          type: string
+          maxLength: 255
+          example: "HELLO WORLD"
+          
+    DecifrarSemInfoDeslocamentoRequest:
+      type: object
+      required:
+        - textoCifrado
+      properties:
+        textoCifrado:
+          type: string
+          maxLength: 255
+          example: "KHOOR ZRUOG"
+
+    DecifrarSemInfoDeslocamentoResponse:
+      type: object
+      properties:
+        textoClaro:
+          type: string
+          maxLength: 255
+          example: "HELLO WORLD"
+          
