@@ -43,22 +43,22 @@ paths:
         '400':
           description: "Requisição inválida"
           
-  /decifrarSemInfoDeslocamento:
+  /decifrarForcaBruta:
     post:
-      summary: "Decifra uma mensagem cifrada que não possui a informação de deslocamento, usando a Cifra de César."
+      summary: "Decifra uma mensagem cifrada que não possui a informação de deslocamento, utilizando força bruta na Cifra de César."
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DecifrarSemInfoDeslocamentoRequest'
+              $ref: '#/components/schemas/DecifrarForcaBrutaRequest'
       responses:
         '200':
           description: "Mensagem decifrada com sucesso"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DecifrarSemInfoDeslocamentoResponse'
+                $ref: '#/components/schemas/DecifrarForcaBrutaResponse'
         '400':
           description: "Requisição inválida"
 
@@ -108,7 +108,7 @@ components:
           maxLength: 255
           example: "HELLO WORLD"
           
-    DecifrarSemInfoDeslocamentoRequest:
+    DecifrarForcaBrutaRequest:
       type: object
       required:
         - textoCifrado
@@ -118,11 +118,10 @@ components:
           maxLength: 255
           example: "KHOOR ZRUOG"
 
-    DecifrarSemInfoDeslocamentoResponse:
+    DecifrarForcaBrutaResponse:
       type: object
       properties:
         textoClaro:
           type: string
           maxLength: 255
           example: "HELLO WORLD"
-          
