@@ -21,18 +21,36 @@
     <script src="./dist/swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./dist/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     
-    
-    
-    <!-- <script src="./dist/swagger-initializer-cesar.js" charset="UTF-8"> </script> -->
-    
-     <script>
+    <script>
+      function loadSwaggerScript(src, yamlPath) {
+        // Remove o script antigo, se houver
+        const oldScript = document.getElementById('swagger-script');
+        if (oldScript) oldScript.remove();
+
+        // Limpa o container do Swagger UI
+        const swaggerContainer = document.getElementById('swagger-ui');
+        swaggerContainer.innerHTML = '';
+
+        // Define a variável do YAML antes de carregar o script
+        window.yamlToLoad = yamlPath;
+
+        // Cria e adiciona o novo script
+        const script = document.createElement('script');
+        script.src = src;
+        script.id = 'swagger-script';
+        script.charset = 'UTF-8';
+        document.body.appendChild(script);
+      }
+
+      // Botões
       document.getElementById('btn-cesar').addEventListener('click', () => {
-        loadSwaggerScript('./dist/swagger-initializer-cesar.js');
+        loadSwaggerScript('./dist/swagger-initializer-cesar.js', './cifra-cesar-api-spec.yaml');
       });
 
       document.getElementById('btn-vernam').addEventListener('click', () => {
-        loadSwaggerScript('./dist/swagger-initializer-vernam.js');
+        loadSwaggerScript('./dist/swagger-initializer-vernam.js', './cifra-vernam-api-spec.yaml');
       });
     </script>
   </body>
 </html>
+
