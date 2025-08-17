@@ -1,13 +1,13 @@
-<!-- HTML for static distribution bundle build -->
+<!-- HTML para distribuição estática no GitHub Pages -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Swagger UI</title>
-    <link rel="stylesheet" type="text/css" href="./dist/swagger-ui.css" />
-    <link rel="stylesheet" type="text/css" href="./dist/index.css" />
-    <link rel="icon" type="image/png" href="./dist/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="./dist/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="/ifsp-seguranca-informacao/dist/swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/ifsp-seguranca-informacao/dist/index.css" />
+    <link rel="icon" type="image/png" href="/ifsp-seguranca-informacao/dist/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/ifsp-seguranca-informacao/dist/favicon-16x16.png" sizes="16x16" />
   </head>
 
   <body>
@@ -18,25 +18,26 @@
     
     <div id="swagger-ui"></div>
     
-    <script src="./dist/swagger-ui-bundle.js" charset="UTF-8"> </script>
-    <script src="./dist/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+    <!-- Swagger scripts -->
+    <script src="/ifsp-seguranca-informacao/dist/swagger-ui-bundle.js" charset="UTF-8"></script>
+    <script src="/ifsp-seguranca-informacao/dist/swagger-ui-standalone-preset.js" charset="UTF-8"></script>
     
     <script>
-      function loadSwaggerScript(src, yamlPath) {
-        // Remove o script antigo, se houver
+      function loadSwaggerScript(scriptPath, yamlPath) {
+        // Remove script antigo, se houver
         const oldScript = document.getElementById('swagger-script');
         if (oldScript) oldScript.remove();
 
-        // Limpa o container do Swagger UI
+        // Limpa container do Swagger UI
         const swaggerContainer = document.getElementById('swagger-ui');
         swaggerContainer.innerHTML = '';
 
-        // Define a variável do YAML antes de carregar o script
+        // Define o YAML a ser carregado
         window.yamlToLoad = yamlPath;
 
-        // Cria e adiciona o novo script
+        // Cria e adiciona o script do Swagger
         const script = document.createElement('script');
-        script.src = src;
+        script.src = scriptPath;
         script.id = 'swagger-script';
         script.charset = 'UTF-8';
         document.body.appendChild(script);
@@ -44,11 +45,17 @@
 
       // Botões
       document.getElementById('btn-cesar').addEventListener('click', () => {
-        loadSwaggerScript('./dist/swagger-initializer-cesar.js', './cifra-cesar-api-spec.yaml');
+        loadSwaggerScript(
+          '/ifsp-seguranca-informacao/dist/swagger-initializer-cesar.js',
+          '/ifsp-seguranca-informacao/cifra-cesar-api-spec.yaml'
+        );
       });
 
       document.getElementById('btn-vernam').addEventListener('click', () => {
-        loadSwaggerScript('./dist/swagger-initializer-vernam.js', './cifra-vernam-api-spec.yaml');
+        loadSwaggerScript(
+          '/ifsp-seguranca-informacao/dist/swagger-initializer-vernam.js',
+          '/ifsp-seguranca-informacao/cifra-vernam-api-spec.yaml'
+        );
       });
     </script>
   </body>
