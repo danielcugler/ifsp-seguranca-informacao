@@ -21,43 +21,8 @@
     <!-- Swagger scripts -->
     <script src="/ifsp-seguranca-informacao/dist/swagger-ui-bundle.js" charset="UTF-8"></script>
     <script src="/ifsp-seguranca-informacao/dist/swagger-ui-standalone-preset.js" charset="UTF-8"></script>
+    <script src="/ifsp-seguranca-informacao/dist/swagger-initializer-cesar.js" charset="UTF-8"></script>
     
-    <script>
-      function loadSwaggerScript(scriptPath, yamlPath) {
-        // Remove script antigo, se houver
-        const oldScript = document.getElementById('swagger-script');
-        if (oldScript) oldScript.remove();
-
-        // Limpa container do Swagger UI
-        const swaggerContainer = document.getElementById('swagger-ui');
-        swaggerContainer.innerHTML = '';
-
-        // Define o YAML a ser carregado
-        window.yamlToLoad = yamlPath;
-
-        // Cria e adiciona o script do Swagger
-        const script = document.createElement('script');
-        script.src = scriptPath;
-        script.id = 'swagger-script';
-        script.charset = 'UTF-8';
-        document.body.appendChild(script);
-      }
-
-      // Botões
-      document.getElementById('btn-cesar').addEventListener('click', () => {
-        loadSwaggerScript(
-          '/ifsp-seguranca-informacao/dist/swagger-initializer-cesar.js',
-          '/ifsp-seguranca-informacao/cifra-cesar-api-spec.yaml'
-        );
-      });
-
-      document.getElementById('btn-vernam').addEventListener('click', () => {
-        loadSwaggerScript(
-          '/ifsp-seguranca-informacao/dist/swagger-initializer-vernam.js',
-          '/ifsp-seguranca-informacao/cifra-vernam-api-spec.yaml'
-        );
-      });
-    </script>
   </body>
 </html>
 
