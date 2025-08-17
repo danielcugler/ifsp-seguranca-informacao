@@ -11,10 +11,28 @@
   </head>
 
   <body>
+    <div>
+      <button id="btn-cesar">Carregar API spec Cifra de Cesar</button>
+      <button id="btn-vernam">Carregar API spec Cifra de Vernam</button>
+    </div>
+    
     <div id="swagger-ui"></div>
     
     <script src="./dist/swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./dist/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
-    <script src="./dist/swagger-initializer-cesar.js" charset="UTF-8"> </script>
+    
+    
+    
+    <!-- <script src="./dist/swagger-initializer-cesar.js" charset="UTF-8"> </script> -->
+    
+     <script>
+      document.getElementById('btn-cesar').addEventListener('click', () => {
+        loadSwaggerScript('./dist/swagger-initializer-cesar.js');
+      });
+
+      document.getElementById('btn-vernam').addEventListener('click', () => {
+        loadSwaggerScript('./dist/swagger-initializer-vernam.js');
+      });
+    </script>
   </body>
 </html>
