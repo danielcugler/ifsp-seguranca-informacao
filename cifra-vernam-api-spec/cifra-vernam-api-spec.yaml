@@ -67,7 +67,7 @@ components:
         textoCifrado:
           type: string
           maxLength: 2048
-          example: "010100010101001101010100"
+          example: "000011000000010000010101"
 
     DecifrarRequest:
       type: object
@@ -78,7 +78,7 @@ components:
         textoCifrado:
           type: string
           maxLength: 2048
-          example: "010100010101001101010100"
+          example: "000011000000010000010101"
         chave:
           type: string
           maxLength: 255
