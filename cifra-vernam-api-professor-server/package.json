@@ -1,0 +1,16 @@
+{
+  "name": "vernam-api",
+  "version": "1.0.0",
+  "description": "API para cifrar e decifrar mensagens usando a Cifra de Vernam",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
+  }
+}

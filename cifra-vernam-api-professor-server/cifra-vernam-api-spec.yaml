@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: "API de Cifra de Vernan"
+  description: "API para cifrar e decifrar mensagens usando a Cifra de Vernan. Texto cifrado deve ser retornado em binário, com formato de 8 bits."
+  version: 1.0.0
+
+paths:
+  /cifrar:
+    post:
+      summary: "Cifra uma mensagem usando a Cifra de Vernan"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CifrarRequest'
+      responses:
+        '200':
+          description: "Mensagem cifrada com sucesso"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CifrarResponse'
+        '400':
+          description: "Requisição inválida"
+
+  /decifrar:
+    post:
+      summary: "Decifra uma mensagem cifrada usando a Cifra de Vernan"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecifrarRequest'
+      responses:
+        '200':
+          description: "Mensagem decifrada com sucesso"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecifrarResponse'
+        '400':
+          description: "Requisição inválida"
+      
+
+components:
+  schemas:
+    CifrarRequest:
+      type: object
+      required:
+        - textoClaro
+        - chave
+      properties:
+        textoClaro:
+          type: string
+          maxLength: 255
+          example: "OLA"
+        chave:
+          type: string
+          maxLength: 255
+          example: "CHT"
+
+    CifrarResponse:
+      type: object
+      properties:
+        textoCifrado:
+          type: string
+          maxLength: 2048
+          example: "000011000000010000010101"
+
+    DecifrarRequest:
+      type: object
+      required:
+        - textoCifrado
+        - chave
+      properties:
+        textoCifrado:
+          type: string
+          maxLength: 2048
+          example: "000011000000010000010101"
+        chave:
+          type: string
+          maxLength: 255
+          example: "CHT"
+
+    DecifrarResponse:
+      type: object
+      properties:
+        textoClaro:
+          type: string
+          maxLength: 255
+          example: "OLA"
