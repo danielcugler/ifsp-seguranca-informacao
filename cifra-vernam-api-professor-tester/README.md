@@ -5,7 +5,7 @@ The server used to test it is in the project cifra-vernam-api-professor-server. 
 # How to install
 `yarn install`
 
-#How to run
+# How to run
 `yarn start`
 
 or, if  you want to change the port used:
