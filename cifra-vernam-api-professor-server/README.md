@@ -7,5 +7,5 @@ The other project that can test this one is in the repository 'cifra-vernam-api-
 # How to install
 `yarn install`
 
-#How to run
+# How to run
 `yarn start`
