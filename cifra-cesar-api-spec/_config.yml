@@ -1,0 +1,8 @@
+exclude:
+  - node_modules
+  - cifra-vernam-api-professor-server/node_modules
+  - cifra-vernam-api-professor-server
+  - vendor
+  - README.md
+  - package.json
+  - package-lock.json
