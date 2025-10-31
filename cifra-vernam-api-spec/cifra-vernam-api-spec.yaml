@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: "API de Cifra de Vernan"
   description: "API para cifrar e decifrar mensagens usando a Cifra de Vernan. Texto cifrado deve ser retornado em binário, com formato de 8 bits."
-  version: 1.0.0
+  version: 1.0.1
 
 paths:
   /cifrar:
