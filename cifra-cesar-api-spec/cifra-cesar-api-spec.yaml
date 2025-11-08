@@ -45,7 +45,7 @@ paths:
           
   /decifrarForcaBruta:
     post:
-      summary: "Decifra uma mensagem cifrada que não possui a informação de deslocamento, utilizando força bruta na Cifra de César."
+      summary: "Decifra uma mensagem cifrada que não possui a informação de deslocamento, utilizando força bruta na Cifra de César. Adotar o idioma português como o único idioma aceito."
       requestBody:
         required: true
         content:
