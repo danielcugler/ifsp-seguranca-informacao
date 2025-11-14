@@ -51,7 +51,7 @@
     }
     h1{margin:0;font-size:20px}
     p.lead{margin:0;color:rgba(230,238,248,0.78);font-size:14px}
-    .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
+    .links{display:grid;grid-template-columns: 1fr;gap:18px;margin-top:22px}
     a.card{
       display:flex;align-items:center;gap:14px;padding:18px;border-radius:12px;text-decoration:none;background:linear-gradient(180deg,var(--glass),var(--glass-2));border:1px solid rgba(255,255,255,0.03);
       transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
@@ -74,7 +74,7 @@
 <body>
   <main class="wrap" role="main">
     <header>
-      <div class="logo" aria-hidden="true">CF</div>
+      <div class="logo" aria-hidden="true">Specs</div>
       <div>
         <h1>Especificações das APIs — Acesso rápido</h1>
         <p class="lead">Abra as especificações das APIs para a Cifra de César e Cifra de Vernam.</p>
@@ -83,7 +83,7 @@
 
     <section class="links" aria-label="API links">
       <a class="card" href="https://danielcugler.github.io/ifsp-seguranca-informacao/cifra-cesar-api-spec/" target="_blank" rel="noopener noreferrer" aria-label="Open Cifra Cesar API spec in a new tab">
-        <div class="icon" aria-hidden="true">C</div>
+        <div class="icon" aria-hidden="true">Cesar</div>
         <div class="meta">
           <h3>Cifra César — API Spec</h3>
           <p>Specification & documentation for the Cifra César API (GitHub Pages).</p>
@@ -91,7 +91,7 @@
       </a>
 
       <a class="card" href="https://danielcugler.github.io/ifsp-seguranca-informacao/cifra-vernam-api-spec/" target="_blank" rel="noopener noreferrer" aria-label="Open Cifra Vernam API spec in a new tab">
-        <div class="icon" aria-hidden="true">V</div>
+        <div class="icon" aria-hidden="true">Vernam</div>
         <div class="meta">
           <h3>Cifra Vernam — API Spec</h3>
           <p>Specification & documentation for the Cifra Vernam API (GitHub Pages).</p>
