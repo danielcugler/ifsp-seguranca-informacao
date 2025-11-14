@@ -7,5 +7,7 @@ The other project that can test this one is in the repository 'cifra-cesar-api-p
 # How to install
 `yarn install`
 
+`yarn build'
+
 # How to run
 `yarn start`

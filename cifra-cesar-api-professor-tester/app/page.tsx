@@ -139,7 +139,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null)
   const [selectedExample, setSelectedExample] = useState<string>("")
 
-  const isValidEndpoint = endpoint.endsWith("cifrar") || endpoint.endsWith("decifrar") || endpoint.endsWith("decifrarforcabruta") 
+  const isValidEndpoint = endpoint.toLowerCase().endsWith("cifrar") || endpoint.toLowerCase().endsWith("decifrar") || endpoint.toLowerCase().endsWith("decifrarforcabruta") 
 
   const isValidExampleResponse = () => {
     if (!selectedExample || !response) {
@@ -191,8 +191,8 @@ export default function Home() {
       }
 
       const isRadioBoxSelectedForSomeDecifrarForcaBrutaExample = DECIFRARFORCABRUTA_EXAMPLES.some(example => example.id === selectedExample); //checking if the radiobox selected is one of the DECIFRARFORCABRUTA_EXAMPLES. Only those will expect the endpoint to finish with 'decifrarForcaBruta'
-      if(isRadioBoxSelectedForSomeDecifrarForcaBrutaExample && !cleanedEndpoint.endsWith("/decifrarforcabruta")) {
-        alert("Endpoint does not finish with '/decifrar', is that correct?");
+      if(isRadioBoxSelectedForSomeDecifrarForcaBrutaExample && !cleanedEndpoint.endsWith("/decifrarForcaBruta")) {
+        alert("Endpoint does not finish with '/decifrarForcaBruta', is that correct?");
       }           
 
       let parsedPayload
